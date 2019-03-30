@@ -6,7 +6,8 @@ import { EmptyCart } from './EmptyCart';
 import { CartList } from './CartList';
 import { CartTotals } from './CartTotals';
 
-export const Cart = () => {
+
+export const Cart = (props) => {
   return(  
     <ProductConsumer>
       {(value) => {
@@ -17,7 +18,7 @@ export const Cart = () => {
               <Title name = "our" title = "cart"/>
               <CartColumn/>
               <CartList cardData = { cart } value = { value }/>
-              <CartTotals value = { value }/>
+              <CartTotals value = { value } history = { props.history }/>
             </section>
           )
         }

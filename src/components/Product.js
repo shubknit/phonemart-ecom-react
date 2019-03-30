@@ -16,7 +16,8 @@ export const Product =  (props) => {
                      <img className = 'card-img-top' src = { img } alt = 'product image'/> 
                  </Link>
                  <button className = 'cart-btn'  disabled = { inCart } 
-                  onClick = { async () => { 
+                  onClick = { async (e) => {
+                    e.stopPropagation(); 
                     await value.addToCart(id); 
                     value.openModal(id);
                    }}>
